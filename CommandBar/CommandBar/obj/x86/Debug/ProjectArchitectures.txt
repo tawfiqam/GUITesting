@@ -1,0 +1,1 @@
+c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\CommandBar.csproj;x86

@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "MediaCaptureReader.Windows"
+    </assembly>
+    <members>
+        <member name="M:MediaCaptureReader.ImageDecoder.LoadFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream,MediaCaptureReader.MediaSample2DFormat)">
+            <summary>Loads a 2D media sample from stream</summary>
+        </member>
+        <member name="M:MediaCaptureReader.ImageDecoder.LoadFromFileAsync(Windows.Storage.IStorageFile,MediaCaptureReader.MediaSample2DFormat)">
+            <summary>Loads a 2D media sample from file</summary>
+        </member>
+        <member name="M:MediaCaptureReader.ImageDecoder.LoadFromPathAsync(System.String,MediaCaptureReader.MediaSample2DFormat)">
+            <summary>Read an audio or video file. Use "ms-appx:///" to load a file from the app package and "ms-appdata:///" to load a file from the app state.</summary>
+        </member>
+        <member name="T:MediaCaptureReader.NullMediaCapture">
+            <summary>A mock MediaCapture used for testing</summary>
+        </member>
+        <member name="M:MediaCaptureReader.CaptureReader.CreateAsync(Windows.Media.Capture.MediaCapture,Windows.Media.MediaProperties.MediaEncodingProfile)">
+            <summary>Creates a MediaCaptureReader reading samples from the preview stream.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.ImagePresenter.CreateFromSwapChainPanel(Windows.UI.Xaml.Controls.SwapChainPanel,MediaCaptureReader.MediaGraphicsDevice,System.Int32,System.Int32)">
+            <summary>Creates a sample presenter with format Bgra8 and resolution SwapChainPanel.Width x SwapChainPanel.Height.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.ImagePresenter.CreateFromSurfaceImageSource(Windows.UI.Xaml.Media.Imaging.SurfaceImageSource,MediaCaptureReader.MediaGraphicsDevice,System.Int32,System.Int32)">
+            <summary>Creates a sample presenter with format Bgra8.</summary>
+        </member>
+        <member name="P:MediaCaptureReader.MediaReader.Duration">
+            <summary>The duration of the media. Zero if unknown.</summary>
+        </member>
+        <member name="P:MediaCaptureReader.MediaReader.GraphicsDevice">
+            <summary>The GraphicsDevice used to decode and process the video data. Null if only the CPU is used.</summary>
+        </member>
+        <member name="P:MediaCaptureReader.MediaReader.AllStreams">
+            <summary>The list of all streams..</summary>
+        </member>
+        <member name="P:MediaCaptureReader.MediaReader.VideoStream">
+            <summary>The first video stream. Null if no video.</summary>
+        </member>
+        <member name="P:MediaCaptureReader.MediaReader.AudioStream">
+            <summary>The first audio stream. Null if no audio.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromMediaCaptureAsync(Windows.Media.Capture.MediaCapture,MediaCaptureReader.AudioInitialization,MediaCaptureReader.VideoInitialization,MediaCaptureReader.MediaReaderCaptureInitializationSettings)">
+            <summary>Read audio and video data from a microphone or camera using MediaCapture.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromMediaCaptureAsync(Windows.Media.Capture.MediaCapture,MediaCaptureReader.AudioInitialization,MediaCaptureReader.VideoInitialization)">
+            <summary>Read audio and video data from a microphone or camera using MediaCapture.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromMediaCaptureAsync(Windows.Media.Capture.MediaCapture)">
+            <summary>Read audio and video data from a microphone or camera using MediaCapture. The default format for the video stream is NV12 and for the audio stream is PCM.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromMediaSourceAsync(Windows.Media.Core.IMediaSource,MediaCaptureReader.AudioInitialization,MediaCaptureReader.VideoInitialization,MediaCaptureReader.MediaReaderInitializationSettings)">
+            <summary>Read audio and video data from a Media Source like MediaStreamSource for instance.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromMediaSourceAsync(Windows.Media.Core.IMediaSource,MediaCaptureReader.AudioInitialization,MediaCaptureReader.VideoInitialization)">
+            <summary>Read audio and video data from a Media Source like MediaStreamSource for instance.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromMediaSourceAsync(Windows.Media.Core.IMediaSource)">
+            <summary>Read audio and video data from a Media Source like MediaStreamSource for instance. The default format for the video stream is NV12 and for the audio stream is PCM.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromFileAsync(Windows.Storage.IStorageFile,MediaCaptureReader.AudioInitialization,MediaCaptureReader.VideoInitialization,MediaCaptureReader.MediaReaderInitializationSettings)">
+            <summary>Read an audio or video file.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromFileAsync(Windows.Storage.IStorageFile,MediaCaptureReader.AudioInitialization,MediaCaptureReader.VideoInitialization)">
+            <summary>Read an audio or video file.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromFileAsync(Windows.Storage.IStorageFile)">
+            <summary>Read an audio or video file. The default format for the video stream is NV12 and for the audio stream is PCM.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream,MediaCaptureReader.AudioInitialization,MediaCaptureReader.VideoInitialization,MediaCaptureReader.MediaReaderInitializationSettings)">
+            <summary>Read an audio or video bytestream.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream,MediaCaptureReader.AudioInitialization,MediaCaptureReader.VideoInitialization)">
+            <summary>Read an audio or video bytestream.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromStreamAsync(Windows.Storage.Streams.IRandomAccessStream)">
+            <summary>Read an audio or video stream. The default format for the video stream is NV12 and for the audio stream is PCM.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromPathAsync(System.String,MediaCaptureReader.AudioInitialization,MediaCaptureReader.VideoInitialization,MediaCaptureReader.MediaReaderInitializationSettings)">
+            <summary>Read an audio or video file. Use "ms-appx:///" to load a file from the app package and "ms-appdata:///" to load a file from the app state.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromPathAsync(System.String,MediaCaptureReader.AudioInitialization,MediaCaptureReader.VideoInitialization)">
+            <summary>Read an audio or video file. Use "ms-appx:///" to load a file from the app package and "ms-appdata:///" to load a file from the app state.</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReader.CreateFromPathAsync(System.String)">
+            <summary>
+Read an audio or video file. Use "ms-appx:///" to load a file from the app package and "ms-appdata:///" to load a file from the app state. 
+The default format for the video stream is NV12 and for the audio stream is PCM.
+</summary>
+        </member>
+        <member name="P:MediaCaptureReader.MediaReaderInitializationSettings.LowLatencyEnabled">
+            <summary>Default: false</summary>
+        </member>
+        <member name="P:MediaCaptureReader.MediaReaderInitializationSettings.ConvertersEnabled">
+            <summary>Default: true</summary>
+        </member>
+        <member name="P:MediaCaptureReader.MediaReaderInitializationSettings.HardwareAccelerationEnabled">
+            <summary>Default: true</summary>
+        </member>
+        <member name="T:MediaCaptureReader.MediaReaderInitializationSettings">
+            <summary>Less-frequently-used initialization settings</summary>
+        </member>
+        <member name="P:MediaCaptureReader.MediaReaderCaptureInitializationSettings.Stream">
+            <summary>Default: Preview</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaReaderReadResult.DetachSample">
+            <summary>Keep using the sample after MediaReaderReadResult is destroyed.</summary>
+        </member>
+        <member name="P:MediaCaptureReader.MediaReaderReadResult.Sample">
+            <summary>The data read.</summary>
+        </member>
+        <member name="P:MediaCaptureReader.MediaBuffer2D.Planes">
+            <summary>List of bitmap planes (one for Bgra8 and Yuy2, two for Nv12, three for Yv12)</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaSample2D.LockBuffer(MediaCaptureReader.BufferAccessMode)">
+            <summary>Get access to the sample pixel data</summary>
+        </member>
+        <member name="M:MediaCaptureReader.MediaSample2D.#ctor(MediaCaptureReader.MediaSample2DFormat,System.Int32,System.Int32)">
+            <summary>Allocate a new 2D media sample in software memory</summary>
+        </member>
+        <member name="M:MediaCaptureReader.ImageEncoder.SaveToStreamAsync(MediaCaptureReader.MediaSample2D,Windows.Storage.Streams.IRandomAccessStream,MediaCaptureReader.ImageCompression)">
+            <summary>Save an uncompressed video sample to stream</summary>
+        </member>
+        <member name="M:MediaCaptureReader.ImageEncoder.SaveToFileAsync(MediaCaptureReader.MediaSample2D,Windows.Storage.IStorageFile,MediaCaptureReader.ImageCompression)">
+            <summary>Save an uncompressed video sample to file</summary>
+        </member>
+    </members>
+</doc>

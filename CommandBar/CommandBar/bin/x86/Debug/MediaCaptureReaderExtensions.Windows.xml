@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MediaCaptureReaderExtensions.Windows</name>
+    </assembly>
+    <members>
+        <member name="T:MediaCaptureReaderExtensions.IBufferByteAccess">
+            <summary>
+            COM interop interface giving an unsafe pointer to the buffer data
+            </summary>
+        </member>
+        <member name="P:MediaCaptureReaderExtensions.IBufferByteAccess.Buffer">
+            <summary>
+            Unsafe pointer to the buffer data
+            </summary>
+        </member>
+        <member name="T:MediaCaptureReaderExtensions.BufferExtensions">
+            <summary>
+            Extension methods on IBuffer
+            </summary>
+        </member>
+        <member name="M:MediaCaptureReaderExtensions.BufferExtensions.GetData(Windows.Storage.Streams.IBuffer)">
+            <summary>
+            Returns a pointer to the data contained in the IBuffer.
+            </summary>
+            <remarks>
+            The pointer must not be used after the buffer has been destroyed. The pointer
+            alone does not keep the buffer alive: the code must keep an explicit reference to IBuffer.
+            </remarks>
+        </member>
+        <member name="T:MediaCaptureReaderExtensions.VideoDeviceSelection">
+            <summary></summary>
+        </member>
+        <member name="F:MediaCaptureReaderExtensions.VideoDeviceSelection.BackOrFirst">
+            <summary></summary>
+        </member>
+        <member name="F:MediaCaptureReaderExtensions.VideoDeviceSelection.FrontOrFirst">
+            <summary></summary>
+        </member>
+        <member name="T:MediaCaptureReaderExtensions.MediaCaptureInitializationSettingsExtensions">
+            <summary>
+            Extension methods on MediaCaptureInitializationSettings
+            </summary>
+        </member>
+        <member name="M:MediaCaptureReaderExtensions.MediaCaptureInitializationSettingsExtensions.SelectVideoDeviceAsync(Windows.Media.Capture.MediaCaptureInitializationSettings,MediaCaptureReaderExtensions.VideoDeviceSelection)">
+            <summary>
+            Enumerate video devices and set MediaCaptureInitializationSettings.VideoDeviceId based on the selection criteria.
+            </summary>
+            <returns>True if a video device matching the selection criteria was found.</returns>
+        </member>
+        <member name="T:MediaCaptureReaderExtensions.MediaEncoder2DExtensions">
+            <summary>
+            Extension methods on MediaSample encoding single images
+            </summary>
+        </member>
+        <member name="M:MediaCaptureReaderExtensions.MediaEncoder2DExtensions.SaveToFileAsync(MediaCaptureReader.MediaSample2D,Windows.Storage.IStorageFile,MediaCaptureReader.ImageCompression)">
+            <summary></summary>
+        </member>
+        <member name="M:MediaCaptureReaderExtensions.MediaEncoder2DExtensions.SaveToStreamAsync(MediaCaptureReader.MediaSample2D,Windows.Storage.Streams.IRandomAccessStream,MediaCaptureReader.ImageCompression)">
+            <summary></summary>
+        </member>
+    </members>
+</doc>
