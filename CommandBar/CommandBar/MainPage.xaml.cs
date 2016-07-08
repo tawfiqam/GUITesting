@@ -31,13 +31,17 @@ namespace CommandBar
     public sealed partial class MainPage : Page
     {
         public MediaCapture SnapShot;                   //this will be the mediacapture element
+        TimeSpan _position;
+        DispatcherTimer _timer = new DispatcherTimer();
 
         public MainPage()
         {
+            InitializeComponent();
+
             this.InitializeComponent();
+            DispatcherTimerSetup();
 
             this.media.Source = new System.Uri("ms-appx:///Assets/fishes.wmv");
-            
 
             //if after fullscreen user moves over media again, tune on commandBar once more.
             //using lambda notation, creating a handler for the mouse over the MediaElement, media 
@@ -46,6 +50,43 @@ namespace CommandBar
                 BottomCommand.Visibility = Visibility.Visible;
             };
         }
+
+        DispatcherTimer dispatcherTimer;
+
+        int timesTicked = 1; 
+
+
+        public void DispatcherTimerSetup()
+         { 
+            dispatcherTimer = new DispatcherTimer(); 
+
+            dispatcherTimer.Tick += dispatcherTimer_Tick; 
+ 
+            dispatcherTimer.Interval = TimeSpan.FromMilliseconds(1000);
+
+            dispatcherTimer.Start(); 
+ 
+        }
+
+        void dispatcherTimer_Tick(object sender, object e)
+         { 
+             timesTicked++;
+             sliderSeek.Value = media.Position.TotalSeconds;
+        }
+
+        private void media_MediaOpened(object sender, RoutedEventArgs e)
+        {
+            _position = media.NaturalDuration.TimeSpan; 
+            sliderSeek.Minimum = 0;
+            sliderSeek.Maximum = media.NaturalDuration.TimeSpan.TotalSeconds;
+            sliderSeek.MaxWidth = media.NaturalDuration.TimeSpan.TotalSeconds;
+        }
+
+        //private void sliderSeek_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        //{
+        //    int pos = Convert.ToInt32(sliderSeek.Value);
+        //    media.Position = new TimeSpan(0, 0, 0, pos, 0);
+        //}
 
         public void Stop_Click(object sender, RoutedEventArgs e)
         {
@@ -104,28 +145,29 @@ namespace CommandBar
             Sp.Children.Add(Img);
         }
 
+
         //public async void SaveImageVid() //attempting to take a screenshot of each of the video files
         //{
-            //SnapShot.CapturePhotoToStreamAsync.media;
-            //var previewProperties = SnapShot.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoPreview) as VideoEncodingProperties;
-            //VideoFrame videoFrame = new VideoFrame(BitmapPixelFormat.Bgra8, (int)previewProperties.Width, (int)previewProperties.Height);
-            //VideoFrame previewFrame = await SnapShot.GetPreviewFrameAsync(videoFrame);
-            //SoftwareBitmap previewBitmap = previewFrame.SoftwareBitmap;
-            //StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-            //StorageFile newFile = await localFolder.CreateFileAsync("sample"+".jpg", CreationCollisionOption.ReplaceExisting);
-            //Size dpi = new Size(96, 96);
-            //RenderTargetBitmap bmp = new RenderTargetBitmap(300, 200,dpi.Width, dpi.Height, PixelFormats.Pbgra32);
-            //bmp.Render(media);
+        //SnapShot.CapturePhotoToStreamAsync.media;
+        //var previewProperties = SnapShot.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoPreview) as VideoEncodingProperties;
+        //VideoFrame videoFrame = new VideoFrame(BitmapPixelFormat.Bgra8, (int)previewProperties.Width, (int)previewProperties.Height);
+        //VideoFrame previewFrame = await SnapShot.GetPreviewFrameAsync(videoFrame);
+        //SoftwareBitmap previewBitmap = previewFrame.SoftwareBitmap;
+        //StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+        //StorageFile newFile = await localFolder.CreateFileAsync("sample"+".jpg", CreationCollisionOption.ReplaceExisting);
+        //Size dpi = new Size(96, 96);
+        //RenderTargetBitmap bmp = new RenderTargetBitmap(300, 200,dpi.Width, dpi.Height, PixelFormats.Pbgra32);
+        //bmp.Render(media);
 
-            //JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-            //encoder.Frames.Add(BitmapFrame.Create(bmp));
+        //JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+        //encoder.Frames.Add(BitmapFrame.Create(bmp));
 
-            //string filename = Guid.NewGuid().ToString() + ".jpg";
-            //FileStream fs = new FileStream(filename, FileMode.Create);
-            //encoder.Save(fs);
+        //string filename = Guid.NewGuid().ToString() + ".jpg";
+        //FileStream fs = new FileStream(filename, FileMode.Create);
+        //encoder.Save(fs);
 
 
-            //Process.Start(filename);
+        //Process.Start(filename);
 
         //public async Task<IInputStream> GetThumbnailAsync(StorageFile file)
         //{   
@@ -140,5 +182,5 @@ namespace CommandBar
 
     }
 
-    
+
 }

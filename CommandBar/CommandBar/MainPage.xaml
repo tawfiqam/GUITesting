@@ -14,6 +14,9 @@
         <StackPanel VerticalAlignment="Stretch" Height="Auto">
             <MediaElement x:Name="media"/>
         </StackPanel>
+        <StackPanel Orientation="Horizontal" Height="30" Margin="10,719,179,10">
+            <TextBlock Text="Seek" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
     </Grid>
     <Page.BottomAppBar>
         <CommandBar x:Name="BottomCommand" Height="auto" RenderTransformOrigin="0.5,0.5" IsSticky="False">
@@ -25,9 +28,7 @@
             <AppBarButton Icon="Like" Label="Like" Click="Like_Click"/>
             <AppBarButton Icon="Dislike" Label="Dislike" Click="Dislike_Click"/>
             <CommandBar.Content>
-                <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20" >-->
-                <ProgressBar Minimum="0" Maximum="100" Value="75" Height="auto"  Width="auto" Margin="20,60"/>
-                <!--</StackPanel>-->
+                <Slider Margin="2" Width="100" TickFrequency="2" Name="sliderSeek" />
             </CommandBar.Content>
         </CommandBar>
     </Page.BottomAppBar>

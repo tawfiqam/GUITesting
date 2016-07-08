@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>MSR-LENX1-005</Machine>
+    <Machine>ZW6353585</Machine>
     <WindowsUser>t-taamma</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
@@ -9,16 +9,16 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>86cac0c5-1830-4551-b1b5-422927306480</PackageIdentityName>
-    <IntermediateOutputPath>c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\obj\x86\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\bin\x86\Debug\CommandBar.exe">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\CommandBar.exe">
       <PackagePath>entrypoint\CommandBar.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
@@ -348,55 +348,55 @@
     <AppxPackagedFile Include="C:\Users\t-taamma\.nuget\packages\MMaitre.MediaCaptureReader\2.1.6\build\win81\\..\Native\Windows\x86\MediaCaptureReader.winmd">
       <PackagePath>MediaCaptureReader.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\ApplicationInsights.config">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\blocks.jpg">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\blocks.jpg">
       <PackagePath>Assets\blocks.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\fishes.wmv">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\fishes.wmv">
       <PackagePath>Assets\fishes.wmv</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\bin\x86\Debug\CommandBar.xr.xml">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\CommandBar.xr.xml">
       <PackagePath>CommandBar.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\bin\x86\Debug\Core\CommandBar.exe">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\Core\CommandBar.exe">
       <PackagePath>CommandBar.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

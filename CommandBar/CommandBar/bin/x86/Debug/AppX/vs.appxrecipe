@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>MSR-LENX1-005</Machine>
+    <Machine>ZW6353585</Machine>
     <WindowsUser>t-taamma</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
@@ -9,7 +9,7 @@
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>86cac0c5-1830-4551-b1b5-422927306480</PackageIdentityName>
-    <IntermediateOutputPath>c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\obj\x86\Debug\</IntermediateOutputPath>
     <RegisteredManifestChecksum>0C4E4F4CBCFE416663AA7547120416FC3E35F6940F60F25E31103CE4BC2BD69B</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>86cac0c5-1830-4551-b1b5-422927306480_1.0.0.0_x86__b4zwy9b9b53gy</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>86cac0c5-1830-4551-b1b5-422927306480_b4zwy9b9b53gy!App</RegisteredUserModeAppID>
@@ -19,16 +19,16 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-06-24T13:13:14.272</Modified>
+      <Modified>2016-07-08T02:16:47.192</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\bin\x86\Debug\CommandBar.exe">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\CommandBar.exe">
       <PackagePath>entrypoint\CommandBar.exe</PackagePath>
-      <Modified>2016-06-24T13:13:13.429</Modified>
+      <Modified>2016-07-08T02:16:46.453</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -466,71 +466,71 @@
       <PackagePath>MediaCaptureReader.winmd</PackagePath>
       <Modified>2015-05-23T20:06:10.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\ApplicationInsights.config">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
-      <Modified>2016-06-21T20:20:43.773</Modified>
+      <Modified>2016-07-07T20:28:26.553</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\blocks.jpg">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\blocks.jpg">
       <PackagePath>Assets\blocks.jpg</PackagePath>
-      <Modified>2016-06-24T00:58:15.728</Modified>
+      <Modified>2016-07-07T20:28:26.562</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\fishes.wmv">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\fishes.wmv">
       <PackagePath>Assets\fishes.wmv</PackagePath>
-      <Modified>2016-06-21T20:28:42.649</Modified>
+      <Modified>2016-07-07T20:28:26.579</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2016-06-21T20:20:36.617</Modified>
+      <Modified>2016-07-07T20:28:30.600</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2015-07-21T02:06:24.000</Modified>
+      <Modified>2016-07-07T20:28:26.580</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-21T02:06:24.000</Modified>
+      <Modified>2016-07-07T20:28:26.581</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-21T02:06:24.000</Modified>
+      <Modified>2016-07-07T20:28:26.582</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-21T02:06:24.000</Modified>
+      <Modified>2016-07-07T20:28:26.583</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-21T02:06:24.000</Modified>
+      <Modified>2016-07-07T20:28:26.584</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-21T02:06:24.000</Modified>
+      <Modified>2016-07-07T20:28:26.584</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-07-21T02:06:24.000</Modified>
+      <Modified>2016-07-07T20:28:26.585</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\bin\x86\Debug\CommandBar.xr.xml">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\CommandBar.xr.xml">
       <PackagePath>CommandBar.xr.xml</PackagePath>
-      <Modified>2016-06-24T13:13:13.226</Modified>
+      <Modified>2016-07-08T00:21:06.638</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
-      <Modified>2016-06-17T01:09:25.504</Modified>
+      <Modified>2016-06-07T22:13:13.633</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-06-24T13:13:14.021</Modified>
+      <Modified>2016-07-08T02:16:46.939</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\t-taamma\documents\visual studio 2015\Projects\CommandBar\CommandBar\bin\x86\Debug\Core\CommandBar.exe">
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\Core\CommandBar.exe">
       <PackagePath>CommandBar.exe</PackagePath>
-      <Modified>2016-06-24T13:13:14.268</Modified>
+      <Modified>2016-07-08T02:16:47.185</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
