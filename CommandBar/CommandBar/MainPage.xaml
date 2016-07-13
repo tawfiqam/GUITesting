@@ -25,12 +25,9 @@
             <AppBarSeparator/>
             <AppBarButton Icon="Back" Label="Back" Click="Back_Click"/>
             <AppBarButton Icon="Stop" Label="Stop" Click="Stop_Click"/>
-            <AppBarButton Icon="Like" Label="Like" Click="Like_Click"/>
-            <AppBarButton Icon="Dislike" Label="Dislike" Click="Dislike_Click"/>
             <CommandBar.Content>
-                <Slider Margin="2" Width="100" TickFrequency="2" Name="sliderSeek" />
+                <Slider Width="200" Name="sliderSeek" ValueChanged="media_MediaOpened" />
             </CommandBar.Content>
         </CommandBar>
     </Page.BottomAppBar>
-
 </Page>

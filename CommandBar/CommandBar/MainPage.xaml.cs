@@ -36,7 +36,7 @@ namespace CommandBar
 
         public MainPage()
         {
-            InitializeComponent();
+            //InitializeComponent();
 
             this.InitializeComponent();
             DispatcherTimerSetup();
@@ -53,40 +53,31 @@ namespace CommandBar
 
         DispatcherTimer dispatcherTimer;
 
-        int timesTicked = 1; 
-
-
         public void DispatcherTimerSetup()
          { 
             dispatcherTimer = new DispatcherTimer(); 
-
             dispatcherTimer.Tick += dispatcherTimer_Tick; 
- 
-            dispatcherTimer.Interval = TimeSpan.FromMilliseconds(1000);
-
             dispatcherTimer.Start(); 
  
         }
 
         void dispatcherTimer_Tick(object sender, object e)
-         { 
-             timesTicked++;
-             sliderSeek.Value = media.Position.TotalSeconds;
+        { 
+             sliderSeek.Value = media.Position.Seconds;
         }
 
         private void media_MediaOpened(object sender, RoutedEventArgs e)
         {
-            _position = media.NaturalDuration.TimeSpan; 
+            _position = this.media.Position;
             sliderSeek.Minimum = 0;
-            sliderSeek.Maximum = media.NaturalDuration.TimeSpan.TotalSeconds;
-            sliderSeek.MaxWidth = media.NaturalDuration.TimeSpan.TotalSeconds;
+            sliderSeek.Maximum = this.media.NaturalDuration.TimeSpan.TotalSeconds;
         }
 
-        //private void sliderSeek_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        //{
-        //    int pos = Convert.ToInt32(sliderSeek.Value);
-        //    media.Position = new TimeSpan(0, 0, 0, pos, 0);
-        //}
+        private void sliderSeek_MouseLeftButtonUp(object sender, RoutedEventArgs e)
+        {
+            int pos = Convert.ToInt32(sliderSeek.Value);
+            media.Position = new TimeSpan(0, 0, 0, pos, 0);
+        }
 
         public void Stop_Click(object sender, RoutedEventArgs e)
         {
@@ -97,16 +88,6 @@ namespace CommandBar
         {
             media.Pause();
             this.Frame.Navigate(typeof(MovieTitles), null);
-        }
-
-        public void Like_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        public void Dislike_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         public void Play_Click(object sender, RoutedEventArgs e)

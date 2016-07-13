@@ -25,13 +25,10 @@
             <AppBarSeparator/>
             <AppBarButton x:ConnectionId='6' Icon="Back" Label="Back"                   />
             <AppBarButton x:ConnectionId='7' Icon="Stop" Label="Stop"                   />
-            <AppBarButton x:ConnectionId='8' Icon="Like" Label="Like"                   />
-            <AppBarButton x:ConnectionId='9' Icon="Dislike" Label="Dislike"                      />
             <CommandBar.Content>
-                <Slider x:ConnectionId='10' Margin="2" Width="100" TickFrequency="2" Name="sliderSeek" />
+                <Slider x:ConnectionId='8' Width="200" Name="sliderSeek"                                  />
             </CommandBar.Content>
         </CommandBar>
     </Page.BottomAppBar>
-
 </Page>
 

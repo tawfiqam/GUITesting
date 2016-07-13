@@ -60,9 +60,8 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Slider">
       <RootProperty Name="Name" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
-      <RootProperty Name="TickFrequency" />
+      <RootEvent Name="ValueChanged" />
     </RootType>
     <RootType FullName="CommandBar.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
