@@ -17,6 +17,7 @@ using Windows.Storage;
 using System.Threading.Tasks;
 using Windows.Media;
 using Windows.Media.Capture;
+
 //using Windows.Media.MediaProperties;
 //using Windows.Graphics.Imaging;
 //using Windows.Storage.Streams;
@@ -36,9 +37,8 @@ namespace CommandBar
 
         public MainPage()
         {
-            //InitializeComponent();
-
             this.InitializeComponent();
+
             DispatcherTimerSetup();
 
             this.media.Source = new System.Uri("ms-appx:///Assets/fishes.wmv");
@@ -49,6 +49,21 @@ namespace CommandBar
             {
                 BottomCommand.Visibility = Visibility.Visible;
             };
+
+            //if the user clicks on the slider to change the position, then the position of the 
+            //media element will change accordingly. 
+            //This only covers the case in which the user clicks on the slider, and does NOT drag.
+            sliderSeek.AddHandler(PointerPressedEvent,
+                new PointerEventHandler(sliderSeek_Pointer_Change_Position), true);
+
+            //This is the second function for dragging the slider as ooposed to changing the position 
+            //by pointing to it 
+            //work in progress. Still not working out as well as I wanted it to
+
+            //start the animation
+            //myStoryboard.Begin();
+
+
         }
 
         DispatcherTimer dispatcherTimer;
@@ -73,32 +88,43 @@ namespace CommandBar
             sliderSeek.Maximum = this.media.NaturalDuration.TimeSpan.TotalSeconds;
         }
 
-        private void sliderSeek_MouseLeftButtonUp(object sender, RoutedEventArgs e)
+        private void sliderSeek_Pointer_Change_Position(object sender, RoutedEventArgs e)
         {
             int pos = Convert.ToInt32(sliderSeek.Value);
             media.Position = new TimeSpan(0, 0, 0, pos, 0);
         }
 
+        private void sliderSeek_Dragging_Start(object sender, RoutedEventArgs e)
+        {
+            PauseVideo();
+        }
+
+        private void sliderSeek_Dragging_End(object sender, RoutedEventArgs e)
+        {
+            int pos = Convert.ToInt32(sliderSeek.Value);
+            media.Position = new TimeSpan(0, 0, 0, pos, 0);
+            PlayVideo();
+        }
         public void Stop_Click(object sender, RoutedEventArgs e)
         {
-            media.Stop();
+            StopVideo();
         }
 
         public void Back_Click(object sender, RoutedEventArgs e)
         {
-            media.Pause();
+            PauseVideo();
             this.Frame.Navigate(typeof(MovieTitles), null);
         }
 
         public void Play_Click(object sender, RoutedEventArgs e)
         {
-            media.Play();
+            PlayVideo();
             PlayPause.Icon = new SymbolIcon(Symbol.Pause); //toggle button to pause
         }
         
         public void Pause_Click(object sender, RoutedEventArgs e)
         {
-            media.Pause();
+            PauseVideo();
             PlayPause.Icon = new SymbolIcon(Symbol.Play); //toggle button to play
         }
 
@@ -124,6 +150,25 @@ namespace CommandBar
             Img.Source = new BitmapImage(new Uri("ms - appx:///Assets/StoreLogo.png"));
 
             Sp.Children.Add(Img);
+        }
+
+        public void PauseVideo()
+        {
+            media.Pause();
+            //add code here to stop the timer
+        }
+
+        public void PlayVideo()
+        {
+            media.Play();
+            //add code here to start the timer
+        }
+
+        public void StopVideo()
+        {
+            media.Stop();
+            //add code here to stop the timer...
+            //and restart the mediaelement position
         }
 
 

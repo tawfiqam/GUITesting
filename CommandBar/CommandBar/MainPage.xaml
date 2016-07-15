@@ -5,17 +5,29 @@
     xmlns:local="using:CommandBar"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys='clr-namespace:System;assembly=mscorlib'
     mc:Ignorable="d">
-
-    <Grid x:Name="grid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="-233,0,0,-119">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel VerticalAlignment="Stretch" Height="Auto">
+    <Grid x:Name="grid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+       
+        <StackPanel Grid.RowSpan="2" VerticalAlignment="Stretch" Height="Auto">
             <MediaElement x:Name="media"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="30" Margin="10,719,179,10">
-            <TextBlock Text="Seek" VerticalAlignment="Center"></TextBlock>
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
+            <StackPanel.Background>
+                <LinearGradientBrush Opacity="0.4">
+                    <GradientStop Color="Black"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Border Background="LightGreen" Width="100" Height="100" BorderBrush="Green">
+                <Canvas>
+                </Canvas>
+            </Border>
+            <Slider Name="sliderSeek" ValueChanged="media_MediaOpened" KeyDown = "sliderSeek_Pointer_Change_Position" DragStarting="sliderSeek_Dragging_Start" DropCompleted="sliderSeek_Dragging_End"/>
+            
         </StackPanel>
     </Grid>
     <Page.BottomAppBar>
@@ -25,9 +37,6 @@
             <AppBarSeparator/>
             <AppBarButton Icon="Back" Label="Back" Click="Back_Click"/>
             <AppBarButton Icon="Stop" Label="Stop" Click="Stop_Click"/>
-            <CommandBar.Content>
-                <Slider Width="200" Name="sliderSeek" ValueChanged="media_MediaOpened" />
-            </CommandBar.Content>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

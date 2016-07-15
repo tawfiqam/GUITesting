@@ -5,29 +5,38 @@
     xmlns:local="using:CommandBar"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys='clr-namespace:System;assembly=mscorlib'
     mc:Ignorable="d">
-
-    <Grid x:ConnectionId='1' x:Name="grid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="-233,0,0,-119">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel VerticalAlignment="Stretch" Height="Auto">
-            <MediaElement x:ConnectionId='2' x:Name="media"/>
+    <Grid x:ConnectionId='1' x:Name="grid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+       
+        <StackPanel Grid.RowSpan="2" VerticalAlignment="Stretch" Height="Auto">
+            <MediaElement x:ConnectionId='3' x:Name="media"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Height="30" Margin="10,719,179,10">
-            <TextBlock Text="Seek" VerticalAlignment="Center"></TextBlock>
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
+            <StackPanel.Background>
+                <LinearGradientBrush Opacity="0.4">
+                    <GradientStop Color="Black"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Border Background="LightGreen" Width="100" Height="100" BorderBrush="Green">
+                <Canvas>
+                </Canvas>
+            </Border>
+            <Slider x:ConnectionId='2' Name="sliderSeek"                                                                                                                                                                 />
+            
         </StackPanel>
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar x:ConnectionId='3' x:Name="BottomCommand" Height="auto" RenderTransformOrigin="0.5,0.5" IsSticky="False">
-            <AppBarToggleButton x:ConnectionId='4' Label="Play" x:Name="PlayPause"                                              Icon="Pause"/>
-            <AppBarToggleButton x:ConnectionId='5' Label="ScreenSize" x:Name="LargeSmall"                                              Icon="FullScreen"/>
+        <CommandBar x:ConnectionId='4' x:Name="BottomCommand" Height="auto" RenderTransformOrigin="0.5,0.5" IsSticky="False">
+            <AppBarToggleButton x:ConnectionId='5' Label="Play" x:Name="PlayPause"                                              Icon="Pause"/>
+            <AppBarToggleButton x:ConnectionId='6' Label="ScreenSize" x:Name="LargeSmall"                                              Icon="FullScreen"/>
             <AppBarSeparator/>
-            <AppBarButton x:ConnectionId='6' Icon="Back" Label="Back"                   />
-            <AppBarButton x:ConnectionId='7' Icon="Stop" Label="Stop"                   />
-            <CommandBar.Content>
-                <Slider x:ConnectionId='8' Width="200" Name="sliderSeek"                                  />
-            </CommandBar.Content>
+            <AppBarButton x:ConnectionId='7' Icon="Back" Label="Back"                   />
+            <AppBarButton x:ConnectionId='8' Icon="Stop" Label="Stop"                   />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>
