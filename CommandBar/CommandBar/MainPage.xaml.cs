@@ -60,6 +60,9 @@ namespace CommandBar
             //by pointing to it 
             //work in progress. Still not working out as well as I wanted it to
 
+            //get the width of the screen
+            myRectangle.Width = getScreenWidthValue();
+
             //start the animation
             myStoryboard.Begin();
         }
@@ -71,7 +74,6 @@ namespace CommandBar
             dispatcherTimer = new DispatcherTimer(); 
             dispatcherTimer.Tick += dispatcherTimer_Tick; 
             dispatcherTimer.Start(); 
- 
         }
 
         void dispatcherTimer_Tick(object sender, object e)
@@ -137,8 +139,6 @@ namespace CommandBar
         {
             media.IsFullWindow = false;
         }
-
-
         public void Add_Stack_Image()
         {
             StackPanel Sp = new StackPanel();
@@ -172,42 +172,12 @@ namespace CommandBar
             //and restart the mediaelement position
         }
 
-
-        //public async void SaveImageVid() //attempting to take a screenshot of each of the video files
-        //{
-        //SnapShot.CapturePhotoToStreamAsync.media;
-        //var previewProperties = SnapShot.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoPreview) as VideoEncodingProperties;
-        //VideoFrame videoFrame = new VideoFrame(BitmapPixelFormat.Bgra8, (int)previewProperties.Width, (int)previewProperties.Height);
-        //VideoFrame previewFrame = await SnapShot.GetPreviewFrameAsync(videoFrame);
-        //SoftwareBitmap previewBitmap = previewFrame.SoftwareBitmap;
-        //StorageFolder localFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
-        //StorageFile newFile = await localFolder.CreateFileAsync("sample"+".jpg", CreationCollisionOption.ReplaceExisting);
-        //Size dpi = new Size(96, 96);
-        //RenderTargetBitmap bmp = new RenderTargetBitmap(300, 200,dpi.Width, dpi.Height, PixelFormats.Pbgra32);
-        //bmp.Render(media);
-
-        //JpegBitmapEncoder encoder = new JpegBitmapEncoder();
-        //encoder.Frames.Add(BitmapFrame.Create(bmp));
-
-        //string filename = Guid.NewGuid().ToString() + ".jpg";
-        //FileStream fs = new FileStream(filename, FileMode.Create);
-        //encoder.Save(fs);
-
-
-        //Process.Start(filename);
-
-        //public async Task<IInputStream> GetThumbnailAsync(StorageFile file)
-        //{   
-        //    var mediaClip = await MediaClip.CreateFromFileAsync(file);
-
-        //    var mediaComposition = new MediaComposition();
-        //    mediaComposition.Clips.Add(mediaClip);
-
-        //    return await mediaComposition.GetThumbnailAsync(
-        //        TimeSpan.Zero, 0, 0, VideoFramePrecision.NearestFrame);
-        //}
-
+        public double getScreenWidthValue()
+        {
+            var bounds = Window.Current.Bounds;
+            double height = bounds.Height;  //this is the new height of the rectangle.
+            double width = bounds.Width;    //this is the new width of the rectangle.
+            return width;
+        }
     }
-
-
 }

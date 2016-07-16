@@ -79,7 +79,6 @@
       <RootProperty Name="Duration" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
-      <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="Fill" />
       <RootProperty Name="Stroke" />
