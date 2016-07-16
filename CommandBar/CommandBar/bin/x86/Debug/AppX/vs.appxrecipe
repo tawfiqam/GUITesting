@@ -16,7 +16,7 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>7F2ECBF3FC330078D237B41D044580723F38FD8DB93485865F5677972BE135A4</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>7E729A1C006305B39F3FC79AC34ED8978E5598BE5ADBD8CB2CB6F7E8EA12F117</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>86cac0c5-1830-4551-b1b5-422927306480_1.0.0.0_x86__b4zwy9b9b53gy</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>86cac0c5-1830-4551-b1b5-422927306480_b4zwy9b9b53gy!App</RegisteredUserModeAppID>
     <RegisteredPackageID>86cac0c5-1830-4551-b1b5-422927306480</RegisteredPackageID>
@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-07-15T23:33:07.117</Modified>
+      <Modified>2016-07-16T01:50:46.042</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\CommandBar.exe">
       <PackagePath>entrypoint\CommandBar.exe</PackagePath>
-      <Modified>2016-07-15T23:33:05.513</Modified>
+      <Modified>2016-07-16T01:50:45.356</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -476,17 +476,9 @@
       <PackagePath>ApplicationInsights.config</PackagePath>
       <Modified>2016-07-12T00:17:30.752</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\blocks.jpg">
-      <PackagePath>Assets\blocks.jpg</PackagePath>
-      <Modified>2016-07-12T00:17:30.765</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\fishes.wmv">
-      <PackagePath>Assets\fishes.wmv</PackagePath>
-      <Modified>2016-07-12T00:17:30.786</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2016-07-12T00:17:35.733</Modified>
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\block.jpg.png">
+      <PackagePath>Assets\block.jpg.png</PackagePath>
+      <Modified>2016-07-15T23:57:10.886</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -522,9 +514,21 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2016-07-12T00:17:30.796</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\blocks.jpg">
+      <PackagePath>Assets\blocks.jpg</PackagePath>
+      <Modified>2016-07-12T00:17:30.765</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\fishes.wmv">
+      <PackagePath>Assets\fishes.wmv</PackagePath>
+      <Modified>2016-07-12T00:17:30.786</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2016-07-12T00:17:35.733</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\CommandBar.xr.xml">
       <PackagePath>CommandBar.xr.xml</PackagePath>
-      <Modified>2016-07-15T23:33:05.214</Modified>
+      <Modified>2016-07-16T01:39:56.917</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -532,11 +536,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-07-15T23:33:06.586</Modified>
+      <Modified>2016-07-16T01:50:45.818</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\Core\CommandBar.exe">
       <PackagePath>CommandBar.exe</PackagePath>
-      <Modified>2016-07-15T23:33:07.109</Modified>
+      <Modified>2016-07-16T01:50:46.037</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

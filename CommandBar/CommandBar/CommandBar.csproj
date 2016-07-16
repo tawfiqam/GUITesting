@@ -110,6 +110,7 @@
     <None Include="CommandBar_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\block.jpg.png" />
     <Content Include="Assets\blocks.jpg" />
     <Content Include="Assets\fishes.wmv" />
     <Content Include="Properties\Default.rd.xml" />

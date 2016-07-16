@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
        
         <StackPanel Grid.RowSpan="2" VerticalAlignment="Stretch" Height="Auto">
-            <MediaElement x:ConnectionId='3' x:Name="media"/>
+            <MediaElement x:ConnectionId='6' x:Name="media"/>
         </StackPanel>
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
             <StackPanel.Background>
@@ -22,21 +22,31 @@
                     <GradientStop Color="Black"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <Border Background="LightGreen" Width="100" Height="100" BorderBrush="Green">
+            <Border Background="Transparent" Width="200" Height="100" BorderBrush="LightBlue">
                 <Canvas>
+                    <Canvas.Resources>
+                        <Storyboard x:ConnectionId='3' x:Name="myStoryboard">
+                            <DoubleAnimation x:ConnectionId='4'
+                                x:Name="myPointAnimation"
+                                Storyboard.TargetProperty="Opacity"
+                                Storyboard.TargetName="myRectangle"
+                                From="1.0" To="0.0" Duration="0:0:5"/>
+                        </Storyboard>
+                    </Canvas.Resources>
+                    <Rectangle x:ConnectionId='5' x:Name="myRectangle" Width="100" Height="100" Fill="Blue" Stroke="LightBlue" 
+                     Canvas.Top="20" Canvas.Left="20" StrokeThickness="3"/>
                 </Canvas>
             </Border>
-            <Slider x:ConnectionId='2' Name="sliderSeek"                                                                                                                                                                 />
-            
+            <Slider x:ConnectionId='2' Name="sliderSeek"                                                                                                                                                                 />    
         </StackPanel>
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar x:ConnectionId='4' x:Name="BottomCommand" Height="auto" RenderTransformOrigin="0.5,0.5" IsSticky="False">
-            <AppBarToggleButton x:ConnectionId='5' Label="Play" x:Name="PlayPause"                                              Icon="Pause"/>
-            <AppBarToggleButton x:ConnectionId='6' Label="ScreenSize" x:Name="LargeSmall"                                              Icon="FullScreen"/>
+        <CommandBar x:ConnectionId='7' x:Name="BottomCommand" Height="auto" RenderTransformOrigin="0.5,0.5" IsSticky="False">
+            <AppBarToggleButton x:ConnectionId='8' Label="Play" x:Name="PlayPause"                                              Icon="Pause"/>
+            <AppBarToggleButton x:ConnectionId='9' Label="ScreenSize" x:Name="LargeSmall"                                              Icon="FullScreen"/>
             <AppBarSeparator/>
-            <AppBarButton x:ConnectionId='7' Icon="Back" Label="Back"                   />
-            <AppBarButton x:ConnectionId='8' Icon="Stop" Label="Stop"                   />
+            <AppBarButton x:ConnectionId='10' Icon="Back" Label="Back"                   />
+            <AppBarButton x:ConnectionId='11' Icon="Stop" Label="Stop"                   />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

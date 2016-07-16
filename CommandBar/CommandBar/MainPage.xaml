@@ -22,12 +22,22 @@
                     <GradientStop Color="Black"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <Border Background="LightGreen" Width="100" Height="100" BorderBrush="Green">
+            <Border Background="Transparent" Width="200" Height="100" BorderBrush="LightBlue">
                 <Canvas>
+                    <Canvas.Resources>
+                        <Storyboard x:Name="myStoryboard">
+                            <DoubleAnimation
+                                x:Name="myPointAnimation"
+                                Storyboard.TargetProperty="Opacity"
+                                Storyboard.TargetName="myRectangle"
+                                From="1.0" To="0.0" Duration="0:0:5"/>
+                        </Storyboard>
+                    </Canvas.Resources>
+                    <Rectangle x:Name="myRectangle" Width="100" Height="100" Fill="Blue" Stroke="LightBlue" 
+                     Canvas.Top="20" Canvas.Left="20" StrokeThickness="3"/>
                 </Canvas>
             </Border>
-            <Slider Name="sliderSeek" ValueChanged="media_MediaOpened" KeyDown = "sliderSeek_Pointer_Change_Position" DragStarting="sliderSeek_Dragging_Start" DropCompleted="sliderSeek_Dragging_End"/>
-            
+            <Slider Name="sliderSeek" ValueChanged="media_MediaOpened" KeyDown = "sliderSeek_Pointer_Change_Position" DragStarting="sliderSeek_Dragging_Start" DropCompleted="sliderSeek_Dragging_End"/>    
         </StackPanel>
     </Grid>
     <Page.BottomAppBar>

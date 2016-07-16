@@ -61,9 +61,7 @@ namespace CommandBar
             //work in progress. Still not working out as well as I wanted it to
 
             //start the animation
-            //myStoryboard.Begin();
-
-
+            myStoryboard.Begin();
         }
 
         DispatcherTimer dispatcherTimer;
@@ -155,18 +153,21 @@ namespace CommandBar
         public void PauseVideo()
         {
             media.Pause();
+            myStoryboard.Pause();
             //add code here to stop the timer
         }
 
         public void PlayVideo()
         {
             media.Play();
+            myStoryboard.Resume();
             //add code here to start the timer
         }
 
         public void StopVideo()
         {
             media.Stop();
+            myStoryboard.Pause();
             //add code here to stop the timer...
             //and restart the mediaelement position
         }

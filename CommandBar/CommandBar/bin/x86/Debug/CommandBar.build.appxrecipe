@@ -355,14 +355,8 @@
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\blocks.jpg">
-      <PackagePath>Assets\blocks.jpg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\fishes.wmv">
-      <PackagePath>Assets\fishes.wmv</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\block.jpg.png">
+      <PackagePath>Assets\block.jpg.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -390,6 +384,15 @@
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\blocks.jpg">
+      <PackagePath>Assets\blocks.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Assets\fishes.wmv">
+      <PackagePath>Assets\fishes.wmv</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\CommandBar.xr.xml">
       <PackagePath>CommandBar.xr.xml</PackagePath>
