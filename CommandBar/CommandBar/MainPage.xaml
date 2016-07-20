@@ -29,12 +29,11 @@
                             <DoubleAnimation
                                 x:Name="myDoubleAnimation"
                                 Storyboard.TargetProperty="Opacity"
-                                Storyboard.TargetName="myRectangle"
-                                From="1.0" To="0.0" Duration="0:0:5"/>
+                                Storyboard.TargetName="myRectangle"/>
                         </Storyboard>
                     </Canvas.Resources>
                     <Rectangle x:Name="myRectangle" Height="50" Fill="Blue" Stroke="LightBlue" 
-                     Canvas.Top="0" Canvas.Left="0" StrokeThickness="3"/>
+                     Canvas.Top="0" Canvas.Left="0" StrokeThickness="3" />
                 </Canvas>
             </Border>
             <Slider Name="sliderSeek" ValueChanged="media_MediaOpened" KeyDown = "sliderSeek_Pointer_Change_Position" DragStarting="sliderSeek_Dragging_Start" DropCompleted="sliderSeek_Dragging_End"/>    

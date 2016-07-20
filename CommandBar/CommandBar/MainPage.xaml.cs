@@ -34,6 +34,8 @@ namespace CommandBar
         public MediaCapture SnapShot;                   //this will be the mediacapture element
         TimeSpan _position;
         DispatcherTimer _timer = new DispatcherTimer();
+        TimeSpan TotalTimeToday = new TimeSpan(0, 0, 0, 10, 0);
+        public double totalDurationTime {set; get;}
 
         public MainPage()
         {
@@ -41,7 +43,11 @@ namespace CommandBar
 
             DispatcherTimerSetup();
 
-            this.media.Source = new System.Uri("ms-appx:///Assets/fishes.wmv");
+            this.media.Source = new System.Uri("ms-appx:///Assets/fishes.wmv");  //start the media file
+
+            //Get the total time for the media file
+            Media_MediaOpened();
+            myRectangle.Width = totalDurationTime;
 
             //if after fullscreen user moves over media again, tune on commandBar once more.
             //using lambda notation, creating a handler for the mouse over the MediaElement, media 
@@ -61,10 +67,10 @@ namespace CommandBar
             //work in progress. Still not working out as well as I wanted it to
 
             //get the width of the screen
-            myRectangle.Width = getScreenWidthValue();
+            myRectangle.Width = 500;
 
             //start the animation
-            myStoryboard.Begin();
+           // myStoryboard.Begin();
         }
 
         DispatcherTimer dispatcherTimer;
@@ -179,5 +185,16 @@ namespace CommandBar
             double width = bounds.Width;    //this is the new width of the rectangle.
             return width;
         }
+
+        public static void Media_MediaOpened()
+        {
+            
+        }
+
+        //public void HowMuchTimeDoYouHave()
+        //{
+        //    double timeRatio = MediaTime / Media_MediaOpened();
+        //    return timeRatio;
+        //}
     }
 }

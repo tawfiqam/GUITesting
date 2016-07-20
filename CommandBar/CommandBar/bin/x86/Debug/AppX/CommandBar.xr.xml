@@ -73,11 +73,7 @@
       <RootMethod Name="GetTargetName" />
       <RootMethod Name="SetTargetName" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Media.Animation.DoubleAnimation">
-      <RootProperty Name="From" />
-      <RootProperty Name="To" />
-      <RootProperty Name="Duration" />
-    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.Animation.DoubleAnimation" />
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="Height" />
       <RootProperty Name="Fill" />
