@@ -12,10 +12,25 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-       
-        <StackPanel Grid.RowSpan="2" VerticalAlignment="Stretch" Height="Auto">
-            <MediaElement x:ConnectionId='6' x:Name="media"/>
-        </StackPanel>
+
+        <RelativePanel BorderBrush="Gray" BorderThickness="1">
+            <MediaElement x:ConnectionId='3' x:Name="media"/>
+            <Rectangle x:ConnectionId='4' x:Name="RedRect" 
+                           Fill="Red" 
+                           Height="100" 
+                           Width="50" 
+                           RelativePanel.LeftOf="media" 
+                           RelativePanel.AlignBottomWith="media" 
+                           RelativePanel.AlignBottomWithPanel="True" 
+                           VerticalAlignment="Bottom"/>
+
+            <Rectangle x:ConnectionId='5' x:Name="BlueRect" 
+                           Fill="Blue" 
+                           Height="200" 
+                           Width="100" 
+                           RelativePanel.RightOf="RedRect"/>
+        </RelativePanel>
+
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
             <StackPanel.Background>
                 <LinearGradientBrush Opacity="0.4">
@@ -23,29 +38,18 @@
                 </LinearGradientBrush>
             </StackPanel.Background>
             <Border Background="Transparent" Width="auto" Height="auto" BorderBrush="LightBlue">
-                <Canvas>
-                    <Canvas.Resources>
-                        <Storyboard x:ConnectionId='3' x:Name="myStoryboard">
-                            <DoubleAnimation x:ConnectionId='4'
-                                x:Name="myDoubleAnimation"
-                                Storyboard.TargetProperty="Opacity"
-                                Storyboard.TargetName="myRectangle"/>
-                        </Storyboard>
-                    </Canvas.Resources>
-                    <Rectangle x:ConnectionId='5' x:Name="myRectangle" Height="50" Fill="Blue" Stroke="LightBlue" 
-                     Canvas.Top="0" Canvas.Left="0" StrokeThickness="3" />
-                </Canvas>
             </Border>
-            <Slider x:ConnectionId='2' Name="sliderSeek"                                                                                                                                                                 />    
+            <Slider x:ConnectionId='2' Name="sliderSeek"                                                                                                                                                                 />
         </StackPanel>
+
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar x:ConnectionId='7' x:Name="BottomCommand" Height="auto" RenderTransformOrigin="0.5,0.5" IsSticky="False">
-            <AppBarToggleButton x:ConnectionId='8' Label="Play" x:Name="PlayPause"                                              Icon="Pause"/>
-            <AppBarToggleButton x:ConnectionId='9' Label="ScreenSize" x:Name="LargeSmall"                                              Icon="FullScreen"/>
+        <CommandBar x:ConnectionId='6' x:Name="BottomCommand" Height="auto" RenderTransformOrigin="0.5,0.5" IsSticky="False">
+            <AppBarToggleButton x:ConnectionId='7' Label="Play" x:Name="PlayPause"                                              Icon="Pause"/>
+            <AppBarToggleButton x:ConnectionId='8' Label="ScreenSize" x:Name="LargeSmall"                                              Icon="FullScreen"/>
             <AppBarSeparator/>
-            <AppBarButton x:ConnectionId='10' Icon="Back" Label="Back"                   />
-            <AppBarButton x:ConnectionId='11' Icon="Stop" Label="Stop"                   />
+            <AppBarButton x:ConnectionId='9' Icon="Back" Label="Back"                   />
+            <AppBarButton x:ConnectionId='10' Icon="Stop" Label="Stop"                   />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

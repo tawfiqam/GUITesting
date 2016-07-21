@@ -47,7 +47,7 @@ namespace CommandBar
 
             //Get the total time for the media file
             Media_MediaOpened();
-            myRectangle.Width = totalDurationTime;
+            //myRectangle.Width = totalDurationTime;
 
             //if after fullscreen user moves over media again, tune on commandBar once more.
             //using lambda notation, creating a handler for the mouse over the MediaElement, media 
@@ -67,7 +67,7 @@ namespace CommandBar
             //work in progress. Still not working out as well as I wanted it to
 
             //get the width of the screen
-            myRectangle.Width = 500;
+ //            myRectangle.Width = 500;
 
             //start the animation
            // myStoryboard.Begin();
@@ -159,21 +159,21 @@ namespace CommandBar
         public void PauseVideo()
         {
             media.Pause();
-            myStoryboard.Pause();
+            //myStoryboard.Pause();
             //add code here to stop the timer
         }
 
         public void PlayVideo()
         {
             media.Play();
-            myStoryboard.Resume();
+            //myStoryboard.Resume();
             //add code here to start the timer
         }
 
         public void StopVideo()
         {
             media.Stop();
-            myStoryboard.Pause();
+            //myStoryboard.Pause();
             //add code here to stop the timer...
             //and restart the mediaelement position
         }
@@ -190,6 +190,8 @@ namespace CommandBar
         {
             
         }
+
+
 
         //public void HowMuchTimeDoYouHave()
         //{
