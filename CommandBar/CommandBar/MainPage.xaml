@@ -9,39 +9,37 @@
     mc:Ignorable="d">
     <Grid x:Name="grid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-
-        <RelativePanel BorderBrush="Gray" BorderThickness="1">
-            <MediaElement x:Name="media"/>
-            <Rectangle x:Name="RedRect" 
-                           Fill="Red" 
-                           Height="100" 
-                           Width="50" 
-                           RelativePanel.LeftOf="media" 
-                           RelativePanel.AlignBottomWith="media" 
-                           RelativePanel.AlignBottomWithPanel="True" 
-                           VerticalAlignment="Bottom"/>
-
-            <Rectangle x:Name="BlueRect" 
-                           Fill="Blue" 
+        <StackPanel Grid.RowSpan="2">
+            <RelativePanel BorderBrush="Gray" BorderThickness="1">
+                <MediaElement x:Name="media"/>
+                <Rectangle x:Name="Filler" 
                            Height="200" 
-                           Width="100" 
-                           RelativePanel.RightOf="RedRect"/>
-        </RelativePanel>
+                           Width="50" 
+                           RelativePanel.LeftOf="media"
+                           RelativePanel.AlignBottomWith="media"/>
+                <Rectangle x:Name="BlueRect" 
+                           Fill="Blue" 
+                           Height="{x:Bind TimeAllowance}" 
+                           Width="50" 
+                           RelativePanel.RightOf="Filler"
+                           RelativePanel.AlignBottomWith="media"/>
+                <Rectangle x:Name="GreenRect"
+                           Fill="Green"
+                           Height= "{x:Bind TimeSaved}"
+                           Width="50"
+                           RelativePanel.RightOf="BlueRect"
+                           RelativePanel.AlignBottomWith="media"/>
+            </RelativePanel>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
-            <StackPanel.Background>
-                <LinearGradientBrush Opacity="0.4">
-                    <GradientStop Color="Black"/>
-                </LinearGradientBrush>
-            </StackPanel.Background>
+        </StackPanel>
+        <StackPanel Grid.Row="2" VerticalAlignment="Bottom">
             <Border Background="Transparent" Width="auto" Height="auto" BorderBrush="LightBlue">
             </Border>
-            <Slider Name="sliderSeek" ValueChanged="media_MediaOpened" KeyDown = "sliderSeek_Pointer_Change_Position" DragStarting="sliderSeek_Dragging_Start" DropCompleted="sliderSeek_Dragging_End"/>
+            <Slider Name="sliderSeek" ValueChanged="media_MediaOpened" KeyDown = "sliderSeek_Pointer_Change_Position" DragStarting="sliderSeek_Dragging_Start" DropCompleted="sliderSeek_Dragging_End" RelativePanel.Below="media"/>
         </StackPanel>
-
     </Grid>
     <Page.BottomAppBar>
         <CommandBar x:Name="BottomCommand" Height="auto" RenderTransformOrigin="0.5,0.5" IsSticky="False">

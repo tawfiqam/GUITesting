@@ -36,7 +36,9 @@ namespace CommandBar
         DispatcherTimer _timer = new DispatcherTimer();
         TimeSpan TotalTimeToday = new TimeSpan(0, 0, 0, 10, 0);
         public double totalDurationTime {set; get;}
-
+        public double TimeAllowance = 500;
+        public double TimeAddedbyParent = 0;
+        public double TimeSaved = 0;
         public MainPage()
         {
             this.InitializeComponent();
@@ -53,7 +55,7 @@ namespace CommandBar
             //using lambda notation, creating a handler for the mouse over the MediaElement, media 
             media.PointerEntered += (s, e) =>                               
             {
-                BottomCommand.Visibility = Visibility.Visible;
+                InFocus();
             };
 
             //if the user clicks on the slider to change the position, then the position of the 
@@ -62,15 +64,6 @@ namespace CommandBar
             sliderSeek.AddHandler(PointerPressedEvent,
                 new PointerEventHandler(sliderSeek_Pointer_Change_Position), true);
 
-            //This is the second function for dragging the slider as ooposed to changing the position 
-            //by pointing to it 
-            //work in progress. Still not working out as well as I wanted it to
-
-            //get the width of the screen
- //            myRectangle.Width = 500;
-
-            //start the animation
-           // myStoryboard.Begin();
         }
 
         DispatcherTimer dispatcherTimer;
@@ -136,14 +129,13 @@ namespace CommandBar
 
         public void Full_Click(object sender, RoutedEventArgs e)
         {
-            media.IsFullWindow = true;
-            BottomCommand.Visibility = Visibility.Collapsed;
+            maximizeScreen();
             //could not find appropriate icon for minimizing screen
         }
 
         public void Small_Click(object sender, RoutedEventArgs e)
         {
-            media.IsFullWindow = false;
+            minimizeScreen();
         }
         public void Add_Stack_Image()
         {
@@ -186,17 +178,32 @@ namespace CommandBar
             return width;
         }
 
-        public static void Media_MediaOpened()
+        public void Media_MediaOpened()
         {
-            
+            OutofFocus();
         }
 
+        public void OutofFocus()
+        {
+            GreenRect.Visibility = Visibility.Collapsed;
+            BlueRect.Width = 10;
+        }
 
+        public void InFocus()
+        {
+            BottomCommand.Visibility = Visibility.Visible;
+            GreenRect.Visibility = Visibility.Visible;
+            BlueRect.Width = 50;
+        }
 
-        //public void HowMuchTimeDoYouHave()
-        //{
-        //    double timeRatio = MediaTime / Media_MediaOpened();
-        //    return timeRatio;
-        //}
+        public void maximizeScreen()
+        {
+            media.IsFullWindow = true;
+        }
+
+        public void minimizeScreen()
+        {
+            media.IsFullWindow = false;
+        }
     }
 }
