@@ -21,7 +21,6 @@
                            RelativePanel.LeftOf="media"
                            RelativePanel.AlignBottomWith="media"/>
                 <Rectangle x:ConnectionId='6' x:Name="BlueRect" 
-                           Fill="Blue" 
                                                            
                            Width="50" 
                            RelativePanel.RightOf="Filler"
@@ -33,6 +32,7 @@
                            RelativePanel.RightOf="BlueRect"
                            RelativePanel.AlignBottomWith="media"/>
             </RelativePanel>
+
 
         </StackPanel>
         <StackPanel Grid.Row="2" VerticalAlignment="Bottom">

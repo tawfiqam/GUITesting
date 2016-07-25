@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -12,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Windows.Storage;
 using System.Threading.Tasks;
@@ -50,6 +52,7 @@ namespace CommandBar
             //Get the total time for the media file
             Media_MediaOpened();
             //myRectangle.Width = totalDurationTime;
+            changeColorGradient();
 
             //if after fullscreen user moves over media again, tune on commandBar once more.
             //using lambda notation, creating a handler for the mouse over the MediaElement, media 
@@ -71,13 +74,14 @@ namespace CommandBar
         public void DispatcherTimerSetup()
          { 
             dispatcherTimer = new DispatcherTimer(); 
-            dispatcherTimer.Tick += dispatcherTimer_Tick; 
+            dispatcherTimer.Tick += dispatcherTimer_Tick;
             dispatcherTimer.Start(); 
         }
 
         void dispatcherTimer_Tick(object sender, object e)
         { 
              sliderSeek.Value = media.Position.Seconds;
+             //countDownAllwance();
         }
 
         private void media_MediaOpened(object sender, RoutedEventArgs e)
@@ -178,6 +182,14 @@ namespace CommandBar
             return width;
         }
 
+        public double getScreenHeightValue()
+        {
+            var bounds = Window.Current.Bounds;
+            double height = bounds.Height;  //this is the new height of the rectangle.
+            double width = bounds.Width;    //this is the new width of the rectangle.
+            return height;
+        }
+
         public void Media_MediaOpened()
         {
             OutofFocus();
@@ -205,5 +217,63 @@ namespace CommandBar
         {
             media.IsFullWindow = false;
         }
+
+        public void changeColorGradient()
+        {
+            LinearGradientBrush fiveColorLGB = new LinearGradientBrush();
+            fiveColorLGB.StartPoint = new Point(0, 0);
+            fiveColorLGB.EndPoint = new Point(1, 1);
+
+            // Create and add Gradient stops
+
+            GradientStop blueGS = new GradientStop();
+            blueGS.Color = Colors.Blue;
+            blueGS.Offset = 0.0;
+            fiveColorLGB.GradientStops.Add(blueGS);
+
+            GradientStop orangeGS = new GradientStop();
+            orangeGS.Color = Colors.Orange;
+            orangeGS.Offset = 0.25;
+            fiveColorLGB.GradientStops.Add(orangeGS);
+
+            GradientStop yellowGS = new GradientStop();
+            yellowGS.Color = Colors.Yellow;
+            yellowGS.Offset = 0.50;
+            fiveColorLGB.GradientStops.Add(yellowGS);
+
+            GradientStop greenGS = new GradientStop();
+            greenGS.Color = Colors.Green;
+            greenGS.Offset = 0.75;
+            fiveColorLGB.GradientStops.Add(greenGS);
+
+            GradientStop redGS = new GradientStop();
+            redGS.Color = Colors.Red;
+            redGS.Offset = 1.0;
+            fiveColorLGB.GradientStops.Add(redGS);
+
+            BlueRect.Fill = fiveColorLGB;
+        }
+
+        //public void countDownAllwance()
+        //{
+        //    TimeAllowance = TimeAllowance - 100;
+        //}
+
+        //public void setUpAnimation()
+        //{
+        //    grid.RenderTransform = new CompositeTransform();
+        //    Storyboard storyboard = new Storyboard();
+        //    DoubleAnimation ChangeHeight = new DoubleAnimation();
+        //    ChangeHeight.From = getScreenHeightValue();
+        //    ChangeHeight.To = 0;
+        //    ChangeHeight.Duration = TimeAllowance;
+
+        //    Storyboard.SetTarget(ChangeHeight, grid);
+        //    Storyboard.SetTargetProperty(ChangeHeight, "Height");
+
+        //    storyboard.Children.Add(ChangeHeight);
+
+        //    storyboard.Begin();
+        //}
     }
 }
