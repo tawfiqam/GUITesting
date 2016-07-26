@@ -42,6 +42,7 @@ namespace CommandBar
         public double TimeToGo = 100;
         public double TimeAddedbyParent = 0;
         public double TimeSaved = 0;
+        public double TimeRatios = 0.0;
         public MainPage()
         {
             this.InitializeComponent();
@@ -53,7 +54,7 @@ namespace CommandBar
             //Get the total time for the media file
             Media_MediaOpened();
             //myRectangle.Width = totalDurationTime;
-            changeColorGradient();
+            //changeColorGradient();
 
             //if after fullscreen user moves over media again, tune on commandBar once more.
             //using lambda notation, creating a handler for the mouse over the MediaElement, media 
@@ -82,7 +83,8 @@ namespace CommandBar
         void dispatcherTimer_Tick(object sender, object e)
         { 
              sliderSeek.Value = media.Position.Seconds;
-             //countDownAllwance();
+            //countDownAllwance();
+            changeColorGradient();
         }
 
         private void media_MediaOpened(object sender, RoutedEventArgs e)
@@ -222,28 +224,25 @@ namespace CommandBar
         public void changeColorGradient()
         {
             LinearGradientBrush fiveColorLGB = new LinearGradientBrush();
-            //fiveColorLGB.StartPoint = new Point(0, 0);
-            //fiveColorLGB.EndPoint = new Point(1, 1);
 
-            double TimeRatios = getTimeRatio(TimeToGo,TimeAllowance);
+            //double TimeRatios = 0.5;
 
+            TimeRatios = getTimeRatio(TimeToGo,TimeAllowance);
+            TimeAllowance = TimeAllowance - 50;
+            
             // Create and add Gradient stops
 
             // Create gradient stops for the brush.
             GradientStop stop1 = new GradientStop();
             GradientStop stop2 = new GradientStop();
-            //GradientStop stop3 = new GradientStop();
-
+            
             stop1.Color = Colors.Red;
             stop1.Offset = 0.0;
             stop2.Color = Colors.Blue;
             stop2.Offset = TimeRatios;
-            //stop3.Color = Colors.Salmon;
-            //stop3.Offset = 1.0;
-
+            
             fiveColorLGB.GradientStops.Add(stop1);
             fiveColorLGB.GradientStops.Add(stop2);
-            //fiveColorLGB.GradientStops.Add(stop3);
 
             BlueRect.Fill = fiveColorLGB;
         }
