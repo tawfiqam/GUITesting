@@ -39,6 +39,7 @@ namespace CommandBar
         TimeSpan TotalTimeToday = new TimeSpan(0, 0, 0, 10, 0);
         public double totalDurationTime {set; get;}
         public double TimeAllowance = 500;
+        public double TimeToGo = 100;
         public double TimeAddedbyParent = 0;
         public double TimeSaved = 0;
         public MainPage()
@@ -221,59 +222,44 @@ namespace CommandBar
         public void changeColorGradient()
         {
             LinearGradientBrush fiveColorLGB = new LinearGradientBrush();
-            fiveColorLGB.StartPoint = new Point(0, 0);
-            fiveColorLGB.EndPoint = new Point(1, 1);
+            //fiveColorLGB.StartPoint = new Point(0, 0);
+            //fiveColorLGB.EndPoint = new Point(1, 1);
+
+            double TimeRatios = getTimeRatio(TimeToGo,TimeAllowance);
 
             // Create and add Gradient stops
 
-            GradientStop blueGS = new GradientStop();
-            blueGS.Color = Colors.Blue;
-            blueGS.Offset = 0.0;
-            fiveColorLGB.GradientStops.Add(blueGS);
+            // Create gradient stops for the brush.
+            GradientStop stop1 = new GradientStop();
+            GradientStop stop2 = new GradientStop();
+            //GradientStop stop3 = new GradientStop();
 
-            GradientStop orangeGS = new GradientStop();
-            orangeGS.Color = Colors.Orange;
-            orangeGS.Offset = 0.25;
-            fiveColorLGB.GradientStops.Add(orangeGS);
+            stop1.Color = Colors.Red;
+            stop1.Offset = 0.0;
+            stop2.Color = Colors.Blue;
+            stop2.Offset = TimeRatios;
+            //stop3.Color = Colors.Salmon;
+            //stop3.Offset = 1.0;
 
-            GradientStop yellowGS = new GradientStop();
-            yellowGS.Color = Colors.Yellow;
-            yellowGS.Offset = 0.50;
-            fiveColorLGB.GradientStops.Add(yellowGS);
-
-            GradientStop greenGS = new GradientStop();
-            greenGS.Color = Colors.Green;
-            greenGS.Offset = 0.75;
-            fiveColorLGB.GradientStops.Add(greenGS);
-
-            GradientStop redGS = new GradientStop();
-            redGS.Color = Colors.Red;
-            redGS.Offset = 1.0;
-            fiveColorLGB.GradientStops.Add(redGS);
+            fiveColorLGB.GradientStops.Add(stop1);
+            fiveColorLGB.GradientStops.Add(stop2);
+            //fiveColorLGB.GradientStops.Add(stop3);
 
             BlueRect.Fill = fiveColorLGB;
         }
 
-        //public void countDownAllwance()
-        //{
-        //    TimeAllowance = TimeAllowance - 100;
-        //}
+        public void setUpAnimation()
+        {
+            grid.RenderTransform = new CompositeTransform();
+            Storyboard storyboard = new Storyboard();
+            ColorAnimation ChangeColor = new ColorAnimation();
+            storyboard.Begin();
+        }
 
-        //public void setUpAnimation()
-        //{
-        //    grid.RenderTransform = new CompositeTransform();
-        //    Storyboard storyboard = new Storyboard();
-        //    DoubleAnimation ChangeHeight = new DoubleAnimation();
-        //    ChangeHeight.From = getScreenHeightValue();
-        //    ChangeHeight.To = 0;
-        //    ChangeHeight.Duration = TimeAllowance;
-
-        //    Storyboard.SetTarget(ChangeHeight, grid);
-        //    Storyboard.SetTargetProperty(ChangeHeight, "Height");
-
-        //    storyboard.Children.Add(ChangeHeight);
-
-        //    storyboard.Begin();
-        //}
+        public double getTimeRatio(double TimeAllowanceForRatio, double TimeToGo)
+        {
+            double theTimeRatio = TimeAllowanceForRatio / TimeToGo;
+            return theTimeRatio;
+        }
     }
 }
