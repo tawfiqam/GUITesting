@@ -43,6 +43,14 @@ namespace CommandBar
         public double TimeAddedbyParent = 0;
         public double TimeSaved = 0;
         public double TimeRatios = 0.0;
+        LinearGradientBrush fiveColorLGB = new LinearGradientBrush();
+
+        //double TimeRatios = 0.5;
+
+        // Create and add Gradient stops
+        // Create gradient stops for the brush.
+        GradientStop stop1 = new GradientStop();
+        GradientStop stop2 = new GradientStop();
         public MainPage()
         {
             this.InitializeComponent();
@@ -223,19 +231,6 @@ namespace CommandBar
 
         public void changeColorGradient()
         {
-            LinearGradientBrush fiveColorLGB = new LinearGradientBrush();
-
-            //double TimeRatios = 0.5;
-
-            TimeRatios = getTimeRatio(TimeToGo,TimeAllowance);
-            TimeAllowance = TimeAllowance - 50;
-            
-            // Create and add Gradient stops
-
-            // Create gradient stops for the brush.
-            GradientStop stop1 = new GradientStop();
-            GradientStop stop2 = new GradientStop();
-            
             stop1.Color = Colors.Red;
             stop1.Offset = 0.0;
             stop2.Color = Colors.Blue;
@@ -260,5 +255,19 @@ namespace CommandBar
             double theTimeRatio = TimeAllowanceForRatio / TimeToGo;
             return theTimeRatio;
         }
+
+        public void bindingValues()
+        {
+            //make a new source
+
+            TimeRatios = getTimeRatio(TimeToGo, TimeAllowance);
+            TimeAllowance = TimeAllowance - 50;
+        
+            Binding myBinding = new Binding();
+            myBinding.Source = BlueRect;
+            myBinding.Path = new PropertyPath("TimeAllowance");
+            myBinding.UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged;
+            BindingOperations.SetBinding(BlueRect, GradientStop.OffsetProperty, myBinding);
+        }
+
     }
-}
