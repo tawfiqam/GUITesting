@@ -37,20 +37,19 @@ namespace CommandBar
         TimeSpan _position;
         DispatcherTimer _timer = new DispatcherTimer();
         TimeSpan TotalTimeToday = new TimeSpan(0, 0, 0, 10, 0);
-        public double totalDurationTime {set; get;}
+        public double totalDurationTime { set; get; }
         public double TimeAllowance = 500;
         public double TimeToGo = 100;
         public double TimeAddedbyParent = 0;
         public double TimeSaved = 0;
         public double TimeRatios = 0.0;
-        LinearGradientBrush fiveColorLGB = new LinearGradientBrush();
+        
 
         //double TimeRatios = 0.5;
 
         // Create and add Gradient stops
         // Create gradient stops for the brush.
-        GradientStop stop1 = new GradientStop();
-        GradientStop stop2 = new GradientStop();
+      
         public MainPage()
         {
             this.InitializeComponent();
@@ -66,7 +65,7 @@ namespace CommandBar
 
             //if after fullscreen user moves over media again, tune on commandBar once more.
             //using lambda notation, creating a handler for the mouse over the MediaElement, media 
-            media.PointerEntered += (s, e) =>                               
+            media.PointerEntered += (s, e) =>
             {
                 InFocus();
             };
@@ -82,15 +81,15 @@ namespace CommandBar
         DispatcherTimer dispatcherTimer;
 
         public void DispatcherTimerSetup()
-         { 
-            dispatcherTimer = new DispatcherTimer(); 
+        {
+            dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Tick += dispatcherTimer_Tick;
-            dispatcherTimer.Start(); 
+            dispatcherTimer.Start();
         }
 
         void dispatcherTimer_Tick(object sender, object e)
-        { 
-             sliderSeek.Value = media.Position.Seconds;
+        {
+            sliderSeek.Value = media.Position.Seconds;
             //countDownAllwance();
             changeColorGradient();
         }
@@ -135,7 +134,7 @@ namespace CommandBar
             PlayVideo();
             PlayPause.Icon = new SymbolIcon(Symbol.Pause); //toggle button to pause
         }
-        
+
         public void Pause_Click(object sender, RoutedEventArgs e)
         {
             PauseVideo();
@@ -231,11 +230,14 @@ namespace CommandBar
 
         public void changeColorGradient()
         {
+            LinearGradientBrush fiveColorLGB = new LinearGradientBrush();
+            GradientStop stop1 = new GradientStop();
+            GradientStop stop2 = new GradientStop();
             stop1.Color = Colors.Red;
             stop1.Offset = 0.0;
             stop2.Color = Colors.Blue;
-            stop2.Offset = TimeRatios;
-            
+            stop2.Offset = 0.5;
+
             fiveColorLGB.GradientStops.Add(stop1);
             fiveColorLGB.GradientStops.Add(stop2);
 
@@ -262,7 +264,7 @@ namespace CommandBar
 
             TimeRatios = getTimeRatio(TimeToGo, TimeAllowance);
             TimeAllowance = TimeAllowance - 50;
-        
+
             Binding myBinding = new Binding();
             myBinding.Source = BlueRect;
             myBinding.Path = new PropertyPath("TimeAllowance");
@@ -271,3 +273,4 @@ namespace CommandBar
         }
 
     }
+}

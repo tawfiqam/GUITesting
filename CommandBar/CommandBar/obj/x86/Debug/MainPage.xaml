@@ -1,0 +1,54 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="CommandBar.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CommandBar"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys='clr-namespace:System;assembly=mscorlib'
+    mc:Ignorable="d">
+    <Grid x:ConnectionId='2' x:Name="grid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.RowSpan="2">
+            <RelativePanel BorderBrush="Gray" BorderThickness="1">
+                <MediaElement x:ConnectionId='4' x:Name="media"/>
+                <Rectangle x:ConnectionId='5' x:Name="Filler" 
+                           Height="200" 
+                           Width="50" 
+                           RelativePanel.LeftOf="media"
+                           RelativePanel.AlignBottomWith="media"/>
+                <Rectangle x:ConnectionId='6' x:Name="BlueRect" 
+                                                          
+                            Width="50" 
+                           RelativePanel.RightOf="Filler"
+                           RelativePanel.AlignBottomWith="media"/>
+                <Rectangle x:ConnectionId='7' x:Name="GreenRect"
+                           Fill="Green"
+                                                       
+                           Width="50"
+                           RelativePanel.RightOf="BlueRect"
+                           RelativePanel.AlignBottomWith="media"/>
+            </RelativePanel>
+
+
+        </StackPanel>
+        <StackPanel Grid.Row="2" VerticalAlignment="Bottom">
+            <Border Background="Transparent" Width="auto" Height="auto" BorderBrush="LightBlue">
+            </Border>
+            <Slider x:ConnectionId='3' Name="sliderSeek"                                                                                                                                                                  RelativePanel.Below="media"/>
+        </StackPanel>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar x:ConnectionId='8' x:Name="BottomCommand" Height="auto" RenderTransformOrigin="0.5,0.5" IsSticky="False">
+            <AppBarToggleButton x:ConnectionId='9' Label="Play" x:Name="PlayPause"                                              Icon="Pause"/>
+            <AppBarToggleButton x:ConnectionId='10' Label="ScreenSize" x:Name="LargeSmall"                                              Icon="FullScreen"/>
+            <AppBarSeparator/>
+            <AppBarButton x:ConnectionId='11' Icon="Back" Label="Back"                   />
+            <AppBarButton x:ConnectionId='12' Icon="Stop" Label="Stop"                   />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
+
