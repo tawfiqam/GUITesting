@@ -22,7 +22,7 @@
                            RelativePanel.AlignBottomWith="media"/>
                 <Rectangle x:Name="BlueRect" 
                            Height="{x:Bind TimeAllowance}"
-                            Width="50" 
+                           Width="50" 
                            RelativePanel.RightOf="Filler"
                            RelativePanel.AlignBottomWith="media"/>
                 <Rectangle x:Name="GreenRect"

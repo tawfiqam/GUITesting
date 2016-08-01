@@ -22,7 +22,7 @@
                            RelativePanel.AlignBottomWith="media"/>
                 <Rectangle x:ConnectionId='6' x:Name="BlueRect" 
                                                           
-                            Width="50" 
+                           Width="50" 
                            RelativePanel.RightOf="Filler"
                            RelativePanel.AlignBottomWith="media"/>
                 <Rectangle x:ConnectionId='7' x:Name="GreenRect"
