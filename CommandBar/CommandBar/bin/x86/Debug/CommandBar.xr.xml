@@ -67,7 +67,6 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Fill" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="Height" />
       <RootProperty Name="RenderTransformOrigin" />

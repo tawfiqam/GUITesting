@@ -69,7 +69,7 @@ namespace CommandBar
                 InFocus();
             };
 
-            changeColorGradient1();
+            //changeColorGradient1();
             //if the user clicks on the slider to change the position, then the position of the 
             //media element will change accordingly. 
             //This only covers the case in which the user clicks on the slider, and does NOT drag.
@@ -90,8 +90,6 @@ namespace CommandBar
         void dispatcherTimer_Tick(object sender, object e)
         {
             sliderSeek.Value = media.Position.Seconds;
-            timeElapsed++;
-            changeColorGradient2();
         }
 
         private void media_MediaOpened(object sender, RoutedEventArgs e)
@@ -150,16 +148,6 @@ namespace CommandBar
         public void Small_Click(object sender, RoutedEventArgs e)
         {
             minimizeScreen();
-        }
-        public void Add_Stack_Image()
-        {
-            StackPanel Sp = new StackPanel();
-            Sp.Orientation = Orientation.Horizontal;
-
-            Image Img = new Image();
-            Img.Source = new BitmapImage(new Uri("ms - appx:///Assets/StoreLogo.png"));
-
-            Sp.Children.Add(Img);
         }
 
         public void PauseVideo()
@@ -226,67 +214,6 @@ namespace CommandBar
         public void minimizeScreen()
         {
             media.IsFullWindow = false;
-        }
-
-        public void changeColorGradient1()
-        {
-
-            LinearGradientBrush fiveColorLGB = new LinearGradientBrush();
-            GradientStop stop1 = new GradientStop();
-            stop1.Color = Colors.Red;
-            stop1.Offset = 0.0;
-
-
-            fiveColorLGB.GradientStops.Add(stop1);
-
-            BlueRect.Fill = fiveColorLGB;
-            
-
-        }
-
-        public void changeColorGradient2()
-        {
-
-            LinearGradientBrush fiveColorLGB2 = new LinearGradientBrush();
-            GradientStop stop1 = new GradientStop();
-            GradientStop stop2 = new GradientStop();
-     
-            if (timeElapsed > 6)
-            {
-                stop1.Color = Colors.Red;
-                stop1.Offset = 0.0;
-                stop2.Color = Colors.Blue;
-                stop2.Offset = 0.5;
-                fiveColorLGB2.GradientStops.Add(stop1);
-                fiveColorLGB2.GradientStops.Add(stop2);
-
-                BlueRect.Fill = fiveColorLGB2;
-            }
-            //
-            // Animate the first gradient stop's offset from
-            // 0.0 to 1.0 and then back to 0.0.
-            //
-            //BlueRect.RenderTransform = new ScaleTransform();
-            //DoubleAnimation offsetAnimation = new DoubleAnimation();
-            //offsetAnimation.From = 0.0;
-            //offsetAnimation.To = 1.0;
-            //offsetAnimation.Duration = TimeSpan.FromSeconds(10);
-            //Storyboard.SetTargetName(offsetAnimation, "GradientStop1");
-            //Storyboard.SetTargetProperty(offsetAnimation, "(Rectangle.RenderTransform).(ScaleTransform.ScaleX)");
-            //Storyboard.SetTarget(offsetAnimation, BlueRect);
-
-            //Storyboard gradientStopAnimationStoryboard = new Storyboard();
-            //gradientStopAnimationStoryboard.Children.Add(offsetAnimation);
-
-            //gradientStopAnimationStoryboard.Begin();
-        }
-
-        public void setUpAnimation()
-        {
-            grid.RenderTransform = new CompositeTransform();
-            Storyboard storyboard = new Storyboard();
-            ColorAnimation ChangeColor = new ColorAnimation();
-            storyboard.Begin();
         }
 
         public double getTimeRatio(double TimeAllowanceForRatio, double TimeToGo)

@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-08-01T18:56:33.908</Modified>
+      <Modified>2016-08-02T23:25:09.175</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\CommandBar.exe">
       <PackagePath>entrypoint\CommandBar.exe</PackagePath>
-      <Modified>2016-08-01T18:56:15.680</Modified>
+      <Modified>2016-08-02T23:25:08.400</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -528,7 +528,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\CommandBar.xr.xml">
       <PackagePath>CommandBar.xr.xml</PackagePath>
-      <Modified>2016-07-29T22:19:34.525</Modified>
+      <Modified>2016-08-02T23:21:44.616</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -536,11 +536,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-08-01T18:56:33.652</Modified>
+      <Modified>2016-08-02T23:25:08.900</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\Core\CommandBar.exe">
       <PackagePath>CommandBar.exe</PackagePath>
-      <Modified>2016-08-01T18:56:33.905</Modified>
+      <Modified>2016-08-02T23:25:09.166</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
