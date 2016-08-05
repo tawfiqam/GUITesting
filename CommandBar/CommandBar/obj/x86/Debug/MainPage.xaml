@@ -34,11 +34,11 @@
                            RelativePanel.RightOf="BlueRect"
                            RelativePanel.AlignBottomWith="media"/>
                 <Rectangle x:ConnectionId='7' x:Name="BlackRect"
-                           Fill="White"
+                           Fill="Black"
                            Height= "{Binding TimeRatio.TimeRatios}"
                            Width="50"
-                           RelativePanel.RightOf="GreenRect"
-                           RelativePanel.AlignBottomWith="media"/>
+                           RelativePanel.RightOf="Filler"
+                           RelativePanel.AlignTopWith="BlueRect"/>
             </RelativePanel>
 
 

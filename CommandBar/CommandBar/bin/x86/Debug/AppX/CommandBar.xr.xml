@@ -70,6 +70,8 @@
       <RootMethod Name="SetAlignBottomWith" />
       <RootMethod Name="GetRightOf" />
       <RootMethod Name="SetRightOf" />
+      <RootMethod Name="GetAlignTopWith" />
+      <RootMethod Name="SetAlignTopWith" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.MediaElement" />
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">

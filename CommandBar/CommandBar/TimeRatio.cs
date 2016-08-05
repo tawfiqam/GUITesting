@@ -27,7 +27,7 @@ namespace CommandBar
         {
             var handler = PropertyChanged;
 
-            // With C# 6 this can be replaced with
+            // With C# 6, we will have to use Invoke
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }

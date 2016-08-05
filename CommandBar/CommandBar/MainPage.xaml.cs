@@ -38,7 +38,7 @@ namespace CommandBar
         TimeSpan _position;
         DispatcherTimer _timer = new DispatcherTimer();
         TimeSpan TotalTimeToday = new TimeSpan(0, 0, 0, 10, 0);
-        public int totalDurationTime = 500;
+        public int totalDurationTime = 0;
 
         public TimeRatio TimeRatio { get; internal set; }
 
@@ -48,7 +48,7 @@ namespace CommandBar
 
             // public TimeRatio () { TimeRatios = 500; }
 
-            TimeRatio = new TimeRatio { TimeRatios = 700 };
+            TimeRatio = new TimeRatio { TimeRatios = 0 };
             //totalDurationTime = 500;  //start from 500
 
             DispatcherTimerSetup();
@@ -86,7 +86,7 @@ namespace CommandBar
         void dispatcherTimer_Tick(object sender, object e)
         {
             sliderSeek.Value = media.Position.Seconds;
-            totalDurationTime = totalDurationTime - 1;
+            totalDurationTime = totalDurationTime + 1;
             TimeRatio.TimeRatios = totalDurationTime;
         }
 
@@ -193,6 +193,7 @@ namespace CommandBar
         public void OutofFocus()
         {
             GreenRect.Visibility = Visibility.Collapsed;
+            BlackRect.Visibility = Visibility.Collapsed;
             BlueRect.Width = 10;
         }
 
@@ -211,6 +212,18 @@ namespace CommandBar
         public void minimizeScreen()
         {
             media.IsFullWindow = false;
+        }
+
+        public double GetTotalMediaTime()
+        {
+            var totalMediaTime = this.media.NaturalDuration.TimeSpan.TotalSeconds;
+            return totalMediaTime;
+        }
+
+        public double GetCurrentMediaTime()
+        {
+            var currentMediaTime = this.media.NaturalDuration.TimeSpan.Seconds;
+            return currentMediaTime;
         }
     }
 }
