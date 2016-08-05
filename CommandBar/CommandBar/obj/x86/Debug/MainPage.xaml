@@ -8,32 +8,32 @@
     xmlns:sys='clr-namespace:System;assembly=mscorlib'
     DataContext="{Binding RelativeSource={RelativeSource Self}}"
     mc:Ignorable="d">
-    <Grid x:Name="grid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid x:ConnectionId='1' x:Name="grid"  Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.RowSpan="2">
             <RelativePanel BorderBrush="Gray" BorderThickness="1">
-                <MediaElement x:Name="media"/>
-                <Rectangle x:Name="Filler" 
+                <MediaElement x:ConnectionId='3' x:Name="media"/>
+                <Rectangle x:ConnectionId='4' x:Name="Filler" 
                            Height="200" 
                            Width="50" 
                            RelativePanel.LeftOf="media"
                            RelativePanel.AlignBottomWith="media"/>
-                <Rectangle x:Name="BlueRect"
+                <Rectangle x:ConnectionId='5' x:Name="BlueRect"
                            Fill="Blue"
                            Height="700"
                            Width="50" 
                            RelativePanel.RightOf="Filler"
                            RelativePanel.AlignBottomWith="media"/>
-                <Rectangle x:Name="GreenRect"
+                <Rectangle x:ConnectionId='6' x:Name="GreenRect"
                            Fill="Green"
                            Height= "300"
                            Width="50"
                            RelativePanel.RightOf="BlueRect"
                            RelativePanel.AlignBottomWith="media"/>
-                <Rectangle x:Name="BlackRect"
+                <Rectangle x:ConnectionId='7' x:Name="BlackRect"
                            Fill="White"
                            Height= "{Binding TimeRatio.TimeRatios}"
                            Width="50"
@@ -46,16 +46,17 @@
         <StackPanel Grid.Row="2" VerticalAlignment="Bottom">
             <Border Background="Transparent" Width="auto" Height="auto" BorderBrush="LightBlue">
             </Border>
-            <Slider Name="sliderSeek" ValueChanged="media_MediaOpened" KeyDown = "sliderSeek_Pointer_Change_Position" DragStarting="sliderSeek_Dragging_Start" DropCompleted="sliderSeek_Dragging_End" RelativePanel.Below="media"/>
+            <Slider x:ConnectionId='2' Name="sliderSeek"                                                                                                                                                                  RelativePanel.Below="media"/>
         </StackPanel>
     </Grid>
     <Page.BottomAppBar>
-        <CommandBar x:Name="BottomCommand" Height="auto" RenderTransformOrigin="0.5,0.5" IsSticky="False">
-            <AppBarToggleButton Label="Play" x:Name="PlayPause" Checked="Pause_Click" Unchecked="Play_Click" Icon="Pause"/>
-            <AppBarToggleButton Label="ScreenSize" x:Name="LargeSmall" Checked="Full_Click" Unchecked="Small_Click" Icon="FullScreen"/>
+        <CommandBar x:ConnectionId='8' x:Name="BottomCommand" Height="auto" RenderTransformOrigin="0.5,0.5" IsSticky="False">
+            <AppBarToggleButton x:ConnectionId='9' Label="Play" x:Name="PlayPause"                                              Icon="Pause"/>
+            <AppBarToggleButton x:ConnectionId='10' Label="ScreenSize" x:Name="LargeSmall"                                              Icon="FullScreen"/>
             <AppBarSeparator/>
-            <AppBarButton Icon="Back" Label="Back" Click="Back_Click"/>
-            <AppBarButton Icon="Stop" Label="Stop" Click="Stop_Click"/>
+            <AppBarButton x:ConnectionId='11' Icon="Back" Label="Back"                   />
+            <AppBarButton x:ConnectionId='12' Icon="Stop" Label="Stop"                   />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>
+

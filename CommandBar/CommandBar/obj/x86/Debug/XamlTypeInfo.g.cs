@@ -132,19 +132,21 @@ namespace CommandBar.CommandBar_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[5];
+            _typeNameTable = new string[6];
             _typeNameTable[0] = "CommandBar.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "Double";
-            _typeNameTable[4] = "CommandBar.MovieTitles";
+            _typeNameTable[3] = "CommandBar.TimeRatio";
+            _typeNameTable[4] = "Object";
+            _typeNameTable[5] = "CommandBar.MovieTitles";
 
-            _typeTable = new global::System.Type[5];
+            _typeTable = new global::System.Type[6];
             _typeTable[0] = typeof(global::CommandBar.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::System.Double);
-            _typeTable[4] = typeof(global::CommandBar.MovieTitles);
+            _typeTable[3] = typeof(global::CommandBar.TimeRatio);
+            _typeTable[4] = typeof(global::System.Object);
+            _typeTable[5] = typeof(global::CommandBar.MovieTitles);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -180,7 +182,8 @@ namespace CommandBar.CommandBar_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::CommandBar.MainPage(); }
-        private object Activate_4_MovieTitles() { return new global::CommandBar.MovieTitles(); }
+        private object Activate_3_TimeRatio() { return new global::CommandBar.TimeRatio(); }
+        private object Activate_5_MovieTitles() { return new global::CommandBar.MovieTitles(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -195,7 +198,7 @@ namespace CommandBar.CommandBar_XamlTypeInfo
             case 0:   //  CommandBar.MainPage
                 userType = new global::CommandBar.CommandBar_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_MainPage;
-                userType.AddMemberName("totalDurationTime");
+                userType.AddMemberName("TimeRatio");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -208,13 +211,20 @@ namespace CommandBar.CommandBar_XamlTypeInfo
                 xamlType = new global::CommandBar.CommandBar_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  Double
+            case 3:   //  CommandBar.TimeRatio
+                userType = new global::CommandBar.CommandBar_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  Object
                 xamlType = new global::CommandBar.CommandBar_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  CommandBar.MovieTitles
+            case 5:   //  CommandBar.MovieTitles
                 userType = new global::CommandBar.CommandBar_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_4_MovieTitles;
+                userType.Activator = Activate_5_MovieTitles;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -223,15 +233,10 @@ namespace CommandBar.CommandBar_XamlTypeInfo
         }
 
 
-        private object get_0_MainPage_totalDurationTime(object instance)
+        private object get_0_MainPage_TimeRatio(object instance)
         {
             var that = (global::CommandBar.MainPage)instance;
-            return that.totalDurationTime;
-        }
-        private void set_0_MainPage_totalDurationTime(object instance, object Value)
-        {
-            var that = (global::CommandBar.MainPage)instance;
-            that.totalDurationTime = (global::System.Double)Value;
+            return that.TimeRatio;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -241,11 +246,11 @@ namespace CommandBar.CommandBar_XamlTypeInfo
 
             switch (longMemberName)
             {
-            case "CommandBar.MainPage.totalDurationTime":
+            case "CommandBar.MainPage.TimeRatio":
                 userType = (global::CommandBar.CommandBar_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CommandBar.MainPage");
-                xamlMember = new global::CommandBar.CommandBar_XamlTypeInfo.XamlMember(this, "totalDurationTime", "Double");
-                xamlMember.Getter = get_0_MainPage_totalDurationTime;
-                xamlMember.Setter = set_0_MainPage_totalDurationTime;
+                xamlMember = new global::CommandBar.CommandBar_XamlTypeInfo.XamlMember(this, "TimeRatio", "CommandBar.TimeRatio");
+                xamlMember.Getter = get_0_MainPage_TimeRatio;
+                xamlMember.SetIsReadOnly();
                 break;
             }
             return xamlMember;

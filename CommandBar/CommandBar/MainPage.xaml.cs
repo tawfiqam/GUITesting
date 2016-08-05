@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Windows.Storage;
 using System.Threading.Tasks;
+using System.ComponentModel;
 using Windows.Media;
 using Windows.Media.Capture;
 
@@ -37,21 +38,18 @@ namespace CommandBar
         TimeSpan _position;
         DispatcherTimer _timer = new DispatcherTimer();
         TimeSpan TotalTimeToday = new TimeSpan(0, 0, 0, 10, 0);
-        public double totalDurationTime { set; get; }
-        public double TimeAllowance = 500;
-        public double TimeToGo = 100;
-        public double TimeAddedbyParent = 0;
-        public double TimeSaved = 0;
-        public double TimeRatios = 0.0;
-        public int timeElapsed = 0;
-        
+        public int totalDurationTime = 500;
 
-        // Create and add Gradient stops
-        // Create gradient stops for the brush.
+        public TimeRatio TimeRatio { get; internal set; }
 
         public MainPage()
         {
             this.InitializeComponent();
+
+            // public TimeRatio () { TimeRatios = 500; }
+
+            TimeRatio = new TimeRatio { TimeRatios = 700 };
+            //totalDurationTime = 500;  //start from 500
 
             DispatcherTimerSetup();
 
@@ -59,17 +57,15 @@ namespace CommandBar
 
             //Get the total time for the media file
             Media_MediaOpened();
-            //myRectangle.Width = totalDurationTime;
-            //changeColorGradient();
+       
 
-            //if after fullscreen user moves over media again, tune on commandBar once more.
-            //using lambda notation, creating a handler for the mouse over the MediaElement, media 
-            media.PointerEntered += (s, e) =>
+        //if after fullscreen user moves over media again, tune on commandBar once more.
+        //using lambda notation, creating a handler for the mouse over the MediaElement, media 
+        media.PointerEntered += (s, e) =>
             {
                 InFocus();
             };
 
-            //changeColorGradient1();
             //if the user clicks on the slider to change the position, then the position of the 
             //media element will change accordingly. 
             //This only covers the case in which the user clicks on the slider, and does NOT drag.
@@ -79,7 +75,7 @@ namespace CommandBar
         }
 
         DispatcherTimer dispatcherTimer;
-
+     
         public void DispatcherTimerSetup()
         {
             dispatcherTimer = new DispatcherTimer();
@@ -90,6 +86,8 @@ namespace CommandBar
         void dispatcherTimer_Tick(object sender, object e)
         {
             sliderSeek.Value = media.Position.Seconds;
+            totalDurationTime = totalDurationTime - 1;
+            TimeRatio.TimeRatios = totalDurationTime;
         }
 
         private void media_MediaOpened(object sender, RoutedEventArgs e)
@@ -167,7 +165,6 @@ namespace CommandBar
         public void StopVideo()
         {
             media.Stop();
-            //myStoryboard.Pause();
             //add code here to stop the timer...
             //and restart the mediaelement position
         }
@@ -215,26 +212,5 @@ namespace CommandBar
         {
             media.IsFullWindow = false;
         }
-
-        public double getTimeRatio(double TimeAllowanceForRatio, double TimeToGo)
-        {
-            double theTimeRatio = TimeAllowanceForRatio / TimeToGo;
-            return theTimeRatio;
-        }
-
-        public void bindingValues()
-        {
-            //make a new source
-
-            TimeRatios = getTimeRatio(TimeToGo, TimeAllowance);
-            TimeAllowance = TimeAllowance - 50;
-
-            Binding myBinding = new Binding();
-            myBinding.Source = BlueRect;
-            myBinding.Path = new PropertyPath("TimeAllowance");
-            myBinding.UpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged;
-            BindingOperations.SetBinding(BlueRect, GradientStop.OffsetProperty, myBinding);
-        }
-
     }
 }

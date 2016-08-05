@@ -414,3 +414,6 @@ C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\obj\x86\Debug\qu
 C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\bin\x86\Debug\BlackRectHeight.xbf
+C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\obj\x86\Debug\BlackRectHeight.xaml
+C:\Users\t-taamma\Source\Repos\GUITesting\CommandBar\CommandBar\obj\x86\Debug\BlackRectHeight.xbf
