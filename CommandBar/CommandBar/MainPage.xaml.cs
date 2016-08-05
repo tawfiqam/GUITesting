@@ -201,6 +201,7 @@ namespace CommandBar
         {
             BottomCommand.Visibility = Visibility.Visible;
             GreenRect.Visibility = Visibility.Visible;
+            BlackRect.Visibility = Visibility.Visible;
             BlueRect.Width = 50;
         }
 
@@ -224,6 +225,12 @@ namespace CommandBar
         {
             var currentMediaTime = this.media.NaturalDuration.TimeSpan.Seconds;
             return currentMediaTime;
+        }
+
+        public double GetVideoRatio(double total, double current)
+        {
+            var currentRatio = current / total;
+            return currentRatio;
         }
     }
 }
